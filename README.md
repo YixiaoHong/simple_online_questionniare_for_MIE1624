@@ -8,3 +8,10 @@ Simple Online Questionniare
 ```
 pip install flask
 ```
+
+## How to use:
+
+```
+python3 run.py
+```
+open a web browser with link: "http://localhost:5000"
