@@ -14,20 +14,19 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-from __future__ import unicode_literals
-
-import sys
-
 from . import Progress
+from .helpers import WritelnMixin
 
 
-class Bar(Progress):
+class Bar(WritelnMixin, Progress):
     width = 32
+    message = ''
     suffix = '%(index)d/%(max)d'
     bar_prefix = ' |'
     bar_suffix = '| '
     empty_fill = ' '
     fill = '#'
+    hide_cursor = True
 
     def update(self):
         filled_length = int(self.width * self.progress)
@@ -46,46 +45,39 @@ class ChargingBar(Bar):
     suffix = '%(percent)d%%'
     bar_prefix = ' '
     bar_suffix = ' '
-    empty_fill = '∙'
-    fill = '█'
+    empty_fill = u'∙'
+    fill = u'█'
 
 
 class FillingSquaresBar(ChargingBar):
-    empty_fill = '▢'
-    fill = '▣'
+    empty_fill = u'▢'
+    fill = u'▣'
 
 
 class FillingCirclesBar(ChargingBar):
-    empty_fill = '◯'
-    fill = '◉'
+    empty_fill = u'◯'
+    fill = u'◉'
 
 
 class IncrementalBar(Bar):
-    if sys.platform.startswith('win'):
-        phases = (u' ', u'▌', u'█')
-    else:
-        phases = (' ', '▏', '▎', '▍', '▌', '▋', '▊', '▉', '█')
+    phases = (u' ', u'▏', u'▎', u'▍', u'▌', u'▋', u'▊', u'▉', u'█')
 
     def update(self):
         nphases = len(self.phases)
-        filled_len = self.width * self.progress
-        nfull = int(filled_len)                      # Number of full chars
-        phase = int((filled_len - nfull) * nphases)  # Phase of last char
-        nempty = self.width - nfull                  # Number of empty chars
+        expanded_length = int(nphases * self.width * self.progress)
+        filled_length = int(self.width * self.progress)
+        empty_length = self.width - filled_length
+        phase = expanded_length - (filled_length * nphases)
 
         message = self.message % self
-        bar = self.phases[-1] * nfull
+        bar = self.phases[-1] * filled_length
         current = self.phases[phase] if phase > 0 else ''
-        empty = self.empty_fill * max(0, nempty - len(current))
+        empty = self.empty_fill * max(0, empty_length - len(current))
         suffix = self.suffix % self
         line = ''.join([message, self.bar_prefix, bar, current, empty,
                         self.bar_suffix, suffix])
         self.writeln(line)
 
 
-class PixelBar(IncrementalBar):
-    phases = ('⡀', '⡄', '⡆', '⡇', '⣇', '⣧', '⣷', '⣿')
-
-
 class ShadyBar(IncrementalBar):
-    phases = (' ', '░', '▒', '▓', '█')
+    phases = (u' ', u'░', u'▒', u'▓', u'█')

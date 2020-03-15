@@ -14,22 +14,28 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-from __future__ import unicode_literals
 from . import Infinite, Progress
+from .helpers import WriteMixin
 
 
-class Counter(Infinite):
+class Counter(WriteMixin, Infinite):
+    message = ''
+    hide_cursor = True
+
     def update(self):
         self.write(str(self.index))
 
 
-class Countdown(Progress):
+class Countdown(WriteMixin, Progress):
+    hide_cursor = True
+
     def update(self):
         self.write(str(self.remaining))
 
 
-class Stack(Progress):
-    phases = (' ', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█')
+class Stack(WriteMixin, Progress):
+    phases = (u' ', u'▁', u'▂', u'▃', u'▄', u'▅', u'▆', u'▇', u'█')
+    hide_cursor = True
 
     def update(self):
         nphases = len(self.phases)
@@ -38,4 +44,4 @@ class Stack(Progress):
 
 
 class Pie(Stack):
-    phases = ('○', '◔', '◑', '◕', '●')
+    phases = (u'○', u'◔', u'◑', u'◕', u'●')
