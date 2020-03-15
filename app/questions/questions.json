@@ -1,0 +1,59 @@
+{
+    "title": "Survey",
+    "submit": "Submit",
+    "messages": {
+        "error": {
+            "required": "Field Required",
+            "invalid": "Invalid Input"
+        },
+        "success": "Succeed"
+    },
+    "questions": [
+        {
+            "type": "checkbox",
+            "label": "Example Question#1: Which fileds you interested?",
+            "required": true,
+            "options": [
+                "Machine Learning",
+                "Big Data",
+                "Data Mining"
+            ]
+        },
+        {
+            "type": "radio",
+            "label": "Example Question#2: What is your skill level in Python?",
+            "required": true,
+            "options": [
+                "Never used Python before",
+                "Starter",
+                "Intermediate",
+                "Professional"
+            ]
+        },
+                {
+            "type": "radio",
+            "label": "Example Question#3: ",
+            "required": true,
+            "options": [
+                "Q3-1",
+                "Q3-2",
+                "Q3-3",
+                "Q3-4"
+            ]
+        },
+                {
+            "type": "checkbox",
+            "label": "Example Question#4: ",
+            "required": true,
+            "options": [
+                "Q4-1",
+                "Q4-2",
+                "Q4-3",
+                "Q4-4",
+                "Q4-5",
+                "Q4-6"
+            ]
+        }
+    ]
+
+}
