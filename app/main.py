@@ -66,5 +66,52 @@ def show_questionnaire():
         if error:
             return render_template("form.html", questionnaire=questionnaire)
         else:
-            return str(form)
+            question_list_dict = get_questions()
+            course_list_dict = get_courses()
+            # print(len(question_list_dict))
+            # print(len(course_list_dict))
+            answer = form.to_dict(flat=False)
+            del answer["submit"]
+            answer_tags = set()
+            question_counter = 0
+            for i in answer:
+                current_question_select_tag_dict = question_list_dict[question_counter]["tags"]
+                selected_options = answer[i]
+                for each_option in selected_options:
+                    if each_option in current_question_select_tag_dict:
+                        answer_tags = answer_tags|set(current_question_select_tag_dict[each_option])
+                question_counter+=1
 
+            print("User Selected Tags:")
+            print(answer_tags)
+
+
+            #get all the tags that the user selected, now search for which courses has the tags
+            for course in course_list_dict:
+                num_tags = len(course["tags"])
+                selected_num_tags = 0
+                for each_tag in course["tags"]:
+                    if each_tag in answer_tags:
+                        selected_num_tags +=1
+                course["course_score"] = selected_num_tags*1.0/num_tags
+
+            print("Calculated Course Score:")
+            for course in course_list_dict:
+                print(course)
+
+            ranked_course = sorted(course_list_dict, reverse=True, key=lambda course_obj:course_obj["course_score"])
+            print(ranked_course)
+
+            return "Submitted Answers=\n" + str(form) + "\nUser Selected Tags\n" + str(answer_tags) + "\nCalculated Course Scores:\n" +str(ranked_course)
+
+def get_questions():
+    with open('app/questions/questions.json') as f:
+        data = json.load(f)
+    # print(data)
+    return data["questions"]
+
+def get_courses():
+    with open('app/questions/courses.json') as f:
+        data = json.load(f)
+    # print(data)
+    return data["courses"]

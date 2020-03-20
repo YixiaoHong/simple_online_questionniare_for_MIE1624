@@ -1,0 +1,24 @@
+{
+    "courses": [
+        {
+            "course_code": "APS1070",
+            "course_title": "Intro to Data Science",
+            "course_score": 0,
+            "tags": ["TAG1","TAG2","TAG3"]
+        },
+        {
+            "course_code": "MIE1513",
+            "course_title": "Intro to Machine Learning",
+            "course_score": 0,
+            "tags": ["TAG4","TAG1","TAG5","TAG6"]
+        },
+        {
+            "course_code": "MIE1624",
+            "course_title": "Data Science",
+            "course_score": 0,
+            "tags": ["TAG7"]
+        }
+
+    ]
+
+}

@@ -17,7 +17,12 @@
                 "Machine Learning",
                 "Big Data",
                 "Data Mining"
-            ]
+            ],
+            "tags": {
+                "Machine Learning": ["TAG1","TAG2"],
+                "Big Data": ["TAG2","TAG3"],
+                "Data Mining":["TAG4"]
+            }
         },
         {
             "type": "radio",
@@ -28,31 +33,13 @@
                 "Starter",
                 "Intermediate",
                 "Professional"
-            ]
-        },
-                {
-            "type": "radio",
-            "label": "Example Question#3: ",
-            "required": true,
-            "options": [
-                "Q3-1",
-                "Q3-2",
-                "Q3-3",
-                "Q3-4"
-            ]
-        },
-                {
-            "type": "checkbox",
-            "label": "Example Question#4: ",
-            "required": true,
-            "options": [
-                "Q4-1",
-                "Q4-2",
-                "Q4-3",
-                "Q4-4",
-                "Q4-5",
-                "Q4-6"
-            ]
+            ],
+            "tags": {
+                "Never used Python before": ["TAG4"],
+                "Starter": ["TAG2"],
+                "Intermediate":["TAG3"],
+                "Professional": ["TAG7"]
+            }
         }
     ]
 
