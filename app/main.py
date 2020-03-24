@@ -1,12 +1,15 @@
+from urllib import response
+
+import requests
 from flask import render_template, url_for, request
 from app import webapp
-import json
+import urllib.request, json
 
 
 
 def load_question_as_obj():
-    with open('app/questions/questions.json') as f:
-        data = json.load(f)
+    with urllib.request.urlopen("https://raw.githubusercontent.com/YixiaoHong/simple_online_questionniare_for_MIE1624/master/app/questions/questions.json") as url:
+        data = json.loads(url.read().decode())
     return data
 
 
@@ -137,13 +140,17 @@ def show_questionnaire():
             #"Submitted Answers=\n" + str(form) + "\nUser Selected Tags\n" + str(answer_tags) + "\nCalculated Course Scores:\n" +str(ranked_course)
             return render_template("result.html", Selected_Tags = Selected_Tags ,MC = MC, EC = EC, EB = EB, ET = ET)
 def get_questions():
-    with open('app/questions/questions.json') as f:
-        data = json.load(f)
+    # with open('app/questions/questions.json') as f:
+    #     data = json.load(f)
     # print(data)
+    with urllib.request.urlopen("https://raw.githubusercontent.com/YixiaoHong/simple_online_questionniare_for_MIE1624/master/app/questions/questions.json") as url:
+        data = json.loads(url.read().decode())
     return data["questions"]
 
 def get_courses():
-    with open('app/questions/courses.json') as f:
-        data = json.load(f)
+    # with open('app/questions/courses.json') as f:
+    #     data = json.load(f)
     # print(data)
+    with urllib.request.urlopen("https://raw.githubusercontent.com/YixiaoHong/simple_online_questionniare_for_MIE1624/master/app/questions/courses.json") as url:
+        data = json.loads(url.read().decode())
     return data["courses"]
