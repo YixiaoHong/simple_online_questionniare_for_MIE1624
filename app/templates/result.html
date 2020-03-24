@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+
+<!-- Adding some style to table (OPTIONAL) -->
+<style type="text/css">
+
+    th:tr{
+        color: blue;
+
+    }
+    tr:nth-of-type(2n){
+        border: 1px solid black;
+        background-color: rgba(150, 150, 150, 0.5);
+
+    }
+
+    td{
+        padding: 8px 8px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+<h3>Selected Tags (For Debug)</h3>
+<h2>{{Selected_Tags}}</h2>
+<h3>Core Courses</h3>
+<!-- For loop logic of jinja template -->
+<table style="margin-left: 20px;">
+<!-- Table headers -->
+    <th>
+        <tr style="color: black; ">
+        <td>Course Code</td>
+        <td>Course Title</td>
+
+</tr>
+    </th>
+
+<!-- For loop logic of jinja template -->
+{%for i in range(3)%}
+
+<!-- table rows -->
+<tr>
+    <td>{{MC[i]["course_code"]}}</td>
+    <td>{{MC[i]["course_title"]}}</td>
+
+{%endfor%}
+
+</tr>
+
+</table>
+<h3>Top 3 Recommended Core Elective Courses</h3>
+<table style="margin-left: 20px;">
+<!-- Table headers -->
+    <th>
+        <tr style="color: black; ">
+        <td>Course Code</td>
+        <td>Course Title</td>
+        <td>Recommendation Rate</td>
+        <td>Tages (for Debug)</td>
+</tr>
+    </th>
+
+<!-- For loop logic of jinja template -->
+{%for i in range(3)%}
+
+<!-- table rows -->
+<tr>
+    <td>{{EC[i]["course_code"]}}</td>
+    <td>{{EC[i]["course_title"]}}</td>
+    <td>{{EC[i]["course_score"]}}</td>
+    <td>{{EC[i]["tags"]}}</td>
+
+{%endfor%}
+
+</tr>
+
+</table>
+<h3>Top 3 Recommended Business Elective Courses</h3>
+<table style="margin-left: 20px;">
+<!-- Table headers -->
+    <th>
+        <tr style="color: black; ">
+        <td>Course Code</td>
+        <td>Course Title</td>
+        <td>Recommendation Rate</td>
+            <td>Tages (for Debug)</td>
+</tr>
+    </th>
+
+<!-- For loop logic of jinja template -->
+{%for i in range(3)%}
+
+<!-- table rows -->
+<tr>
+    <td>{{EB[i]["course_code"]}}</td>
+    <td>{{EB[i]["course_title"]}}</td>
+    <td>{{EB[i]["course_score"]}}</td>
+    <td>{{EB[i]["tags"]}}</td>
+
+{%endfor%}
+
+</tr>
+
+</table>
+<h3>Top 3 Recommended Technical Elective Courses</h3>
+<table style="margin-left: 20px;">
+<!-- Table headers -->
+    <th>
+        <tr style="color: black; ">
+        <td>Course Code</td>
+        <td>Course Title</td>
+        <td>Recommendation Rate</td>
+            <td>Tages (for Debug)</td>
+</tr>
+    </th>
+
+<!-- For loop logic of jinja template -->
+{%for i in range(3)%}
+
+<!-- table rows -->
+<tr>
+    <td>{{ET[i]["course_code"]}}</td>
+    <td>{{ET[i]["course_title"]}}</td>
+    <td>{{ET[i]["course_score"]}}</td>
+    <td>{{ET[i]["tags"]}}</td>
+
+{%endfor%}
+
+</tr>
+
+</table>
+
+
+</body>
+</html>

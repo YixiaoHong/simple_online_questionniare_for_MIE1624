@@ -1,24 +1,101 @@
 {
     "courses": [
         {
-            "course_code": "APS1070",
-            "course_title": "Intro to Data Science",
+            "course_code": "MC1000",
+            "course_title": "Introduction to Data Science and Analytics",
+            "course_type": "MC",
             "course_score": 0,
-            "tags": ["TAG1","TAG2","TAG3"]
+            "tags": []
         },
-        {
-            "course_code": "MIE1513",
-            "course_title": "Intro to Machine Learning",
+                {
+            "course_code": "MC1001",
+            "course_title": "Mathematics and Statistics for Data Science",
+            "course_type": "MC",
             "course_score": 0,
-            "tags": ["TAG4","TAG1","TAG5","TAG6"]
+            "tags": []
         },
-        {
-            "course_code": "MIE1624",
-            "course_title": "Data Science",
+                        {
+            "course_code": "MC1002",
+            "course_title": "Machine Learning with Python Programming",
+            "course_type": "MC",
             "course_score": 0,
-            "tags": ["TAG7"]
+            "tags": []
+        },
+                        {
+            "course_code": "EC1000",
+            "course_title": "Programming Language for Data Science - R and Scala ",
+            "course_type": "EC",
+            "course_score": 0,
+            "tags": ["R", "Scala", "Spark", "Parallel Programming"]
+        },
+                                {
+            "course_code": "EC1001",
+            "course_title": "Data Management",
+            "course_type": "EC",
+            "course_score": 0,
+            "tags": ["Database", "SQL", "Data Warehouse"]
+        },
+                                {
+            "course_code": "EC1002",
+            "course_title": "Data Management",
+            "course_type": "EC",
+            "course_score": 0,
+            "tags": ["Hadoop", "Big Data", "Cloud Computing"]
         }
-
+        ,
+                                {
+            "course_code": "EB1000",
+            "course_title": "Communication and Visualization",
+            "course_type": "EB",
+            "course_score": 0,
+            "tags": ["Effective communication", "Critical thinking", "Consulting"]
+        }
+        ,
+                                {
+            "course_code": "EB1001",
+            "course_title": "Ethics and Data Security",
+            "course_type": "EB",
+            "course_score": 0,
+            "tags": ["Work Ethic", "Decision Making"]
+        }
+        ,
+                                {
+            "course_code": "EB1002",
+            "course_title": "Managing Predictive Analytics & Big Data",
+            "course_type": "EB",
+            "course_score": 0,
+            "tags": ["Management", "Consulting"," Innovation"]
+        }
+                ,
+                                {
+            "course_code": "ET1000",
+            "course_title": "Cloud Computing Techniques",
+            "course_type": "ET",
+            "course_score": 0,
+            "tags": [ "AWS", "Cloud Computing"]
+        }
+                ,
+        {
+            "course_code": "ET1001",
+            "course_title": "Natural Language Processing",
+            "course_type": "ET",
+            "course_score": 0,
+            "tags": ["NLP"]
+        },
+        {
+            "course_code": "ET1002",
+            "course_title": "Introduction to Artificial Intelligence",
+            "course_type": "ET",
+            "course_score": 0,
+            "tags": ["AI"]
+        },
+         {
+            "course_code": "ET1003",
+            "course_title": "A.I. in Finance",
+            "course_type": "ET",
+            "course_score": 0,
+            "tags": ["SVM", "AI", "Finance"]
+        }
     ]
 
 }

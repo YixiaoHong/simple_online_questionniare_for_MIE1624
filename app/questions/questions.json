@@ -11,36 +11,48 @@
     "questions": [
         {
             "type": "checkbox",
-            "label": "Example Question#1: Which fileds you interested?",
+            "label": "What's your skill level in Parallel Programing (either R or Scala)?",
             "required": true,
             "options": [
-                "Machine Learning",
-                "Big Data",
-                "Data Mining"
+                "Never used before",
+                "Used in one or two projects",
+                "Advanced level"
             ],
             "tags": {
-                "Machine Learning": ["TAG1","TAG2"],
-                "Big Data": ["TAG2","TAG3"],
-                "Data Mining":["TAG4"]
+                "Never used before": [],
+                "Used in one or two projects":  ["R"],
+                "Advanced level": ["R", "Scala", "Parallel Programming"]
             }
         },
         {
             "type": "radio",
-            "label": "Example Question#2: What is your skill level in Python?",
+            "label": "What do you imagine yourself doing 5 years from now?",
             "required": true,
             "options": [
-                "Never used Python before",
-                "Starter",
-                "Intermediate",
-                "Professional"
+                "Building and running ML models",
+                "Guiding a group of data scientists as team leader"
             ],
             "tags": {
-                "Never used Python before": ["TAG4"],
-                "Starter": ["TAG2"],
-                "Intermediate":["TAG3"],
-                "Professional": ["TAG7"]
+                "Building and running ML models": ["Cloud Computing"],
+                "Guiding a group of data scientists as team leader":  ["Management"]
+            }
+        },
+        {
+            "type": "radio",
+            "label": "Which of the following do you think is the most important for success?",
+            "required": true,
+            "options": [
+                "Effective Communication",
+                "Good Decision Making",
+                "Leadership skills"
+            ],
+            "tags": {
+                "Effective Communication": ["Effective communication"],
+                "Good Decision Making":  ["Decision Making"],
+                "Leadership skills": ["Leadership"]
             }
         }
+
     ]
 
 }
