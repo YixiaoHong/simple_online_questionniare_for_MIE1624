@@ -26,49 +26,56 @@
             "course_title": "Programming Language for Data Science - R and Scala ",
             "course_type": "EC",
             "course_score": 0,
-            "tags": ["R", "Scala", "Spark", "Parallel Programming"]
+            "tags": ["R-EC", "Scala-EC", "Spark-EC",  "Parallel Programming-EC"]
         },
                                 {
             "course_code": "EC1001",
             "course_title": "Data Management",
             "course_type": "EC",
             "course_score": 0,
-            "tags": ["Database", "SQL", "Data Warehouse"]
+            "tags": ["Database-EC", "SQL-EC", "Data Warehouse-EC"]
         },
                                 {
             "course_code": "EC1002",
             "course_title": "Data Management",
             "course_type": "EC",
             "course_score": 0,
-            "tags": ["Hadoop", "Big Data", "Cloud Computing"]
+            "tags": ["Hadoop-EC", "Scala-EC", "Spark-EC", "Big Data-EC", "Cloud Computing-EC"]
         }
         ,
                                 {
-            "course_code": "EB1000",
+            "course_code": "BE1000",
             "course_title": "Communication and Visualization",
-            "course_type": "EB",
+            "course_type": "BE",
             "course_score": 0,
             "tags": ["Effective communication", "Critical thinking", "Consulting"]
         }
         ,
                                 {
-            "course_code": "EB1001",
+            "course_code": "BE1001",
             "course_title": "Ethics and Data Security",
-            "course_type": "EB",
+            "course_type": "BE",
             "course_score": 0,
             "tags": ["Work Ethic", "Decision Making"]
         }
         ,
                                 {
-            "course_code": "EB1002",
+            "course_code": "BE1002",
             "course_title": "Managing Predictive Analytics & Big Data",
-            "course_type": "EB",
+            "course_type": "BE",
             "course_score": 0,
             "tags": ["Management", "Consulting"," Innovation"]
+        },
+                                {
+            "course_code": "BE1003",
+            "course_title": "Data Executive",
+            "course_type": "BE",
+            "course_score": 0,
+            "tags": ["Leadership","Innovation"," Management"]
         }
                 ,
                                 {
-            "course_code": "ET1000",
+            "course_code": "TE1000",
             "course_title": "Cloud Computing Techniques",
             "course_type": "ET",
             "course_score": 0,
@@ -76,25 +83,53 @@
         }
                 ,
         {
-            "course_code": "ET1001",
+            "course_code": "TE1001",
             "course_title": "Natural Language Processing",
-            "course_type": "ET",
+            "course_type": "TE",
             "course_score": 0,
             "tags": ["NLP"]
         },
         {
-            "course_code": "ET1002",
+            "course_code": "TE1002",
             "course_title": "Introduction to Artificial Intelligence",
-            "course_type": "ET",
+            "course_type": "TE",
             "course_score": 0,
             "tags": ["AI"]
         },
          {
-            "course_code": "ET1003",
+            "course_code": "TE1003",
             "course_title": "A.I. in Finance",
-            "course_type": "ET",
+            "course_type": "TE",
             "course_score": 0,
             "tags": ["SVM", "AI", "Finance"]
+        },
+        {
+            "course_code": "PE1000",
+            "course_title": "Engineering Summer Internship Program",
+            "course_type": "PE",
+            "course_score": 0,
+            "tags": [ "Summer", "Team", "Professional"]
+        },
+         {
+            "course_code": "PE1001",
+            "course_title": "Group Capstone Project",
+            "course_type": "PE",
+            "course_score": 0,
+            "tags": [ "Not Summer", "Team", "Professional"]
+        },
+         {
+            "course_code": "PE1002",
+            "course_title": "Individual Capstone Project",
+            "course_type": "PE",
+            "course_score": 0,
+            "tags": [ "Not Summer", "Individual", "Professional"]
+        },
+         {
+            "course_code": "PE1003",
+            "course_title": "Mentored Project ",
+            "course_type": "PE",
+            "course_score": 0,
+            "tags": [ "Research", "Individual", "Team" ]
         }
     ]
 
