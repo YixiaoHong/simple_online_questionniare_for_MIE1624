@@ -37,13 +37,13 @@
         },
                                 {
             "course_code": "EC1002",
-            "course_title": "Data Management",
+            "course_title": "Big Data and Cloud Computing ",
             "course_type": "EC",
             "course_score": 0,
             "tags": ["Hadoop-EC", "Scala-EC", "Spark-EC", "Big Data-EC", "Cloud Computing-EC"]
         }
         ,
-                                {
+          {
             "course_code": "BE1000",
             "course_title": "Communication and Visualization",
             "course_type": "BE",
@@ -51,7 +51,7 @@
             "tags": ["Effective communication", "Critical thinking", "Consulting"]
         }
         ,
-                                {
+         {
             "course_code": "BE1001",
             "course_title": "Ethics and Data Security",
             "course_type": "BE",
@@ -59,29 +59,27 @@
             "tags": ["Work Ethic", "Decision Making"]
         }
         ,
-                                {
+          {
             "course_code": "BE1002",
             "course_title": "Managing Predictive Analytics & Big Data",
             "course_type": "BE",
             "course_score": 0,
             "tags": ["Management", "Consulting"," Innovation"]
         },
-                                {
+         {
             "course_code": "BE1003",
             "course_title": "Data Executive",
             "course_type": "BE",
             "course_score": 0,
             "tags": ["Leadership","Innovation"," Management"]
         }
-                ,
-                                {
+        ,{
             "course_code": "TE1000",
             "course_title": "Cloud Computing Techniques",
             "course_type": "ET",
             "course_score": 0,
             "tags": [ "AWS", "Cloud Computing"]
-        }
-                ,
+        },
         {
             "course_code": "TE1001",
             "course_title": "Natural Language Processing",
