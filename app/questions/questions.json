@@ -15,7 +15,7 @@
             "required": true,
             "options": [
                 "Never used before",
-                "I have some knowledge about it",
+                "I have some knowledge about it"
             ],
             "tags": {
                 "Never used before": ["R-EC"],
@@ -28,7 +28,7 @@
             "required": true,
             "options": [
                 "Never used before",
-                "I have some knowledge about it",
+                "I have some knowledge about it"
             ],
             "tags": {
                 "Never used before": ["Scala-EC"],
@@ -41,7 +41,7 @@
             "required": true,
             "options": [
                 "Never used before",
-                "I have some knowledge about it",
+                "I have some knowledge about it"
             ],
             "tags": {
                 "Never used before": ["SQL-EC"],
