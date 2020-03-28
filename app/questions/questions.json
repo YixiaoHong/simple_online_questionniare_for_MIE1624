@@ -82,11 +82,13 @@
             "required": true,
             "options": [
                 "Building and running ML models",
-                "Guiding a group of data scientists as team leader"
+                "Guiding a group of data scientists as team leader",
+                "Work in a financial institution"
             ],
             "tags": {
                 "Building and running ML models": ["Cloud Computing"],
-                "Guiding a group of data scientists as team leader":  ["Management"]
+                "Guiding a group of data scientists as team leader":  ["Management"],
+                "Work in a financial institution":["Finance"]
             }
         },
         {
@@ -104,6 +106,21 @@
                 "Good Decision Making":["Decision Making"],
                 "Leadership skills":["Leadership"],
                 "Interpersonal skills":["Consulting"]
+            }
+        },
+                {
+            "type": "checkbox",
+            "label": "Which of the following techniques are you interested in?",
+            "required": true,
+            "options": [
+                "Amazon Web Services",
+                "Artificial Intelligence",
+                "Natural Language Processing"
+            ],
+            "tags": {
+                "Amazon Web Services":["AWS"],
+                "Artificial Intelligence":["AI"],
+                "Natural Language Processing":["NLP"]
             }
         },
         {
