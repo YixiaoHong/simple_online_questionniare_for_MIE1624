@@ -39,15 +39,19 @@
         },
         {
             "type": "radio",
-            "label": "What do you imagine yourself doing 5 years from now?",
+            "label": "Which of the following do you think is the most important for success??",
             "required": true,
             "options": [
-                "Building and running ML models",
-                "Guiding a group of data scientists as team leader"
+                "Effective Communication",
+                "Good Decision Making",
+                "Leadership skills",
+                "Interpersonal skills"
             ],
             "tags": {
-                "Building and running ML models": ["Cloud Computing"],
-                "Guiding a group of data scientists as team leader":  ["Management"]
+                "Effective Communication":["Effective Communication"],
+                "Good Decision Making":["Decision Making"],
+                "Leadership skills":["Leadership"],
+                "Interpersonal skills":["Consulting"]
             }
         }
 
