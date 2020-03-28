@@ -91,7 +91,7 @@
         },
         {
             "type": "radio",
-            "label": "Which of the following do you think is the most important for success??",
+            "label": "Which of the following do you think is the most important for success?",
             "required": true,
             "options": [
                 "Effective Communication",
@@ -108,36 +108,41 @@
         },
         {
             "type": "radio",
-            "label": "sdsdWhich of the following do you think is the most important for success??",
+            "label": "Are you able to work during summer?",
             "required": true,
             "options": [
-                "sdEffective Communication",
-                "Gsdood Decision Making",
-                "Lsdeadership skills",
-                "Isdnterpersonal skills"
+                "Yes",
+                "No"
             ],
             "tags": {
-                "Effective Communication":["Effective Communication"],
-                "Good Decision Making":["Decision Making"],
-                "Leadership skills":["Leadership"],
-                "Interpersonal skills":["Consulting"]
+                "Yes":["Summer"],
+                "No":["Not Summer"]
             }
         },
         {
             "type": "radio",
-            "label": "112sdsdWhich of the following do you think is the most important for success??",
+            "label": "Which aspect do you think is more important to you?",
             "required": true,
             "options": [
-                "sdEffective Communication",
-                "Gsdood Decision Making",
-                "Lsdeadership skills",
-                "Isdnterpersonal skills"
+                "Intrapersonal",
+                "Interpersonal"
             ],
             "tags": {
-                "Effective Communication":["Effective Communication"],
-                "Good Decision Making":["Decision Making"],
-                "Leadership skills":["Leadership"],
-                "Interpersonal skills":["Consulting"]
+                "Intrapersonal":["Individual"],
+                "Interpersonal":["Team"]
+            }
+        },
+        {
+            "type": "radio",
+            "label": "Are  you more  professional or research oriented?",
+            "required": true,
+            "options": [
+                "Professional",
+                "Research"
+            ],
+            "tags": {
+                "Professional":["Professional"],
+                "Research":["Research"]
             }
         }
 
