@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smart Course Picker</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/style_.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/select_semester_style.css" type="text/css">
+    <script src="https://mie1624-front.s3.amazonaws.com/static/js/selester_semester.js"></script>
+</head>
+
+<body style="color: black">
+<!-- Page Preloder -->
+
+<!-- Hero Section Begin -->
+<section class="hero-section set-bg">
+    <div class="container" style="height: 100%">
+        <div class="row" style="height: 100%; width: 100%; margin: 0">
+            <div class="col-lg-12">
+                <div class="hero-text" style="position: relative; top: 50%; transform: translateY(-50%);">
+                    <h2 style="color: yellow">{{error_msg }}</h2>
+                    <form id="regForm" class="normal_text filter-search" action="{{ return_addr }}" method="post">
+                        <div class="category-search">
+                            <h5>I want to take</h5>
+                            <select name="limit" class="normal_normal_text lo-search" style="font-size: 16px">
+                                <option value="1">1 course</option>
+                                <option value="2">2 courses</option>
+                                <option value="3">3 courses</option>
+                                <option value="4">4 courses</option>
+                                <option value="5">5 courses</option>
+                            </select>
+                        </div>
+                        <div class="location-search">
+                            <h5>In semester</h5>
+                            <select id="semester_selection" name="semester" class="normal_normal_text ca-search"
+                                    style="font-size: 16px">
+                                <option value="fall">Fall</option>
+                                <option value="winter">Winter</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="main_btn" type="submit" style="line-height: 22px">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+
+<!-- Js Plugins -->
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/bootstrap.min.js"></script>
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/jquery.magnific-popup.min.js"></script>
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/jquery.slicknav.js"></script>
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/owl.carousel.min.js"></script>
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/jquery.nice-select.min.js"></script>
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/mixitup.min.js"></script>
+<script src="https://mie1624-front.s3.amazonaws.com/static/js/select_semester_main.js"></script>
+</body>
+
+</html>

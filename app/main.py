@@ -1,5 +1,7 @@
+import flask
+from flask import render_template, request, redirect, url_for, session
+from app.PopularityStatistic.S3Helper import create_presigned_url_expanded
 from urllib import response
-
 import requests
 from flask import render_template, url_for, request
 from app import webapp
@@ -7,15 +9,20 @@ import urllib.request, json
 
 
 
+
 def load_question_as_obj():
+    # with open('app/questions/questions.json') as f:
+    #     data = json.load(f)
     with urllib.request.urlopen("https://raw.githubusercontent.com/YixiaoHong/simple_online_questionniare_for_MIE1624/master/app/questions/questions.json") as url:
         data = json.loads(url.read().decode())
     return data
 
+@webapp.route("/", methods=['GET'])
+def main_page():
+    img_id = create_presigned_url_expanded("1624.png")
+    return render_template("index.html", img_id = img_id)
 
-#################################################################
-
-@webapp.route('/',methods=['GET','POST'])
+@webapp.route('/questions',methods=['GET','POST'])
 def show_questionnaire():
     questionnaire = load_question_as_obj()
     if request.method == 'GET':
@@ -139,10 +146,21 @@ def show_questionnaire():
 
             #"Submitted Answers=\n" + str(form) + "\nUser Selected Tags\n" + str(answer_tags) + "\nCalculated Course Scores:\n" +str(ranked_course)
             return render_template("result.html", Selected_Tags = Selected_Tags ,MC = MC, EC = EC, EB = EB, ET = ET)
+
+
+
+@webapp.route("/display_img", methods=['GET'])
+def display_img_helper():
+    '''
+    A simple test routing for displaying an image
+    :return: render_template("img_display.html"
+    '''
+    img = create_presigned_url_expanded("1624.png")
+    return render_template("img_display.html", img = img)
+
 def get_questions():
     # with open('app/questions/questions.json') as f:
     #     data = json.load(f)
-    # print(data)
     with urllib.request.urlopen("https://raw.githubusercontent.com/YixiaoHong/simple_online_questionniare_for_MIE1624/master/app/questions/questions.json") as url:
         data = json.loads(url.read().decode())
     return data["questions"]
@@ -150,7 +168,6 @@ def get_questions():
 def get_courses():
     # with open('app/questions/courses.json') as f:
     #     data = json.load(f)
-    # print(data)
     with urllib.request.urlopen("https://raw.githubusercontent.com/YixiaoHong/simple_online_questionniare_for_MIE1624/master/app/questions/courses.json") as url:
         data = json.loads(url.read().decode())
     return data["courses"]

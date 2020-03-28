@@ -1,0 +1,58 @@
+{% extends "wizard_base.html" %}
+{% block form_content %}
+    <meta charset="UTF-8">
+    <title>PPX</title>
+    <script src="https://mie1624-front.s3.amazonaws.com/static/js/course_select.js"></script>
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/main.css">
+
+    <body>
+    <div>
+        <h2>Please select the courses that you {{ type }} to take in {{ curr_semester }}</h2>
+        <h2 id="error_msg" style="color: red">{{ error_msg }}</h2>
+        <input type="hidden" id="selected_courses_ctr" value="{{ selected_courses_ctr }}"/>
+    </div>
+    <div style="width: 100%; vertical-align: center">
+
+        <div class="select_course_section" style="display: inline-block; width: 15%; vertical-align: top; overflow-y: scroll; height:400px">
+            <p><strong>Filter by categories: </strong></p>
+            {% for c in categories %}
+                <p>
+                    <input type="checkbox" class="categories" name="{{ c }}" value="{{ c }}">{{ c }}
+                </p>
+            {% endfor %}
+        </div>
+
+        <div style="display: inline-block; width: 30%; vertical-align: top">
+            <div class="select_course_section with_board" id="display_all_courses" style="overflow-y: scroll; height:400px;">
+            <p>
+                <input id="search_bar" placeholder="Search..." style="width: 100%">
+            </p>
+                {% for c in courses %}
+                    <div style="display: inline-block; width: 100%">
+                        <label>
+                            <input style="width: auto" type="checkbox" class="all_courses {{ c.category }}" name="{{ c.code }}" value="{{ c.code }}">{{ c.code }} {{ c.semester }} <br> {{ c.category }} {{ c.title }}
+                        </label>
+                        <input type="hidden" name="{{ c.code }}" value="{{ c.code }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="display: inline-block;width: 20%;vertical-align: top; padding: 200px 0 0;">
+            <p>
+                <input class="main_btn" type="button" id="add_selected_courses" value="-Add->" style="padding: 0; width: 100%"/>
+            </p>
+            <p>
+                <input class="main_btn" type="button" id="delete_selected_courses" value="<-Delete-" style="padding: 0; width: 100%"/>
+            </p>
+        </div>
+        <div style="display: inline-block; width: 30%">
+            <div class="select_course_section with_board" id="display_all_selected_courses"
+                 style="overflow-y: scroll; height:400px;">
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

@@ -1,47 +1,73 @@
-<form action="{{ url_for('show_questionnaire', questionnaire=questionnaire) }}" method="POST">
-  {% for q in questionnaire.questions %}
-    {% set qloop = loop %}
-    {% set qid = "q{0}".format(loop.index0) %}
-    <div class="question">
-      <label for="{{ qid }}">
-        <span class="question-title">{{ q.label }}</span>
-        {% if q.required %}
-          <sup>*</sup>
-        {% endif %}
-        {% if q.error %}
-          <span class="error" style="color: red">
-            {{ questionnaire.messages.error.required }}
-          </span>
-        {% endif %}
-      </label>
-      <p>
-        {% if q.help %}
-          {{ q.help }}
-        {% endif %}
-      </p>
-      <div>
-        {% if q.type == "text" %}
-          <textarea id="{{ qid }}" name={{ qid }}>{{ q.value }}</textarea>
-        {% elif q.type == "string" %}
-          <input id="{{ qid }}" type="text" name="q{{ qloop.index0 }}" value="{{ q.value }}">
-        {% elif q.type in ("radio", "checkbox") %}
-          <ul class="options">
-            {% for opt in q.options %}
-              <li>
-                {% set checked = "checked" if opt == q.value or opt in q.get('values', []) else "" %}
-                <label>
-                  <input name="{{ qid }}" type="{{ q.type }}" value="{{ opt }}" {{ checked }}>
-                  <span>{{ opt }}</span>
-                </label>
-                {% if opt == q.other_option %}
-                  <input type="text" name="{{ qid }}.{{ opt }}.other" value={{ q.other_value }}>
+{% extends "wizard_base.html" %}
+{% block form_content %}
+    <meta charset="UTF-8">
+    <title>PPX</title>
+    <script src="https://mie1624-front.s3.amazonaws.com/static/js/course_select.js"></script>
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/main.css">
+
+    <body>
+    <div>
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+    <h1>Course Recommendation System</h1>
+    <hr>
+    <h5>Check out the recommended courses for you by finishing the short survey</h5>
+        <form action="{{ url_for('show_questionnaire', questionnaire=questionnaire) }}" method="POST">
+          {% for q in questionnaire.questions %}
+              <hr>
+            {% set qloop = loop %}
+            {% set qid = "q{0}".format(loop.index0) %}
+            <div class="question" >
+              <label for="{{ qid }}">
+                <span class="question-title">{{ "Q{0}".format(loop.index0+1) +": " +q.label}}</span>
+                {% if q.required %}
+                  <sup>*</sup>
                 {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
+                {% if q.error %}
+                  <span class="error" style="color: red">
+                    {{ questionnaire.messages.error.required }}
+                  </span>
+                {% endif %}
+              </label>
+              <p>
+                {% if q.help %}
+                  {{ q.help }}
+                {% endif %}
+              </p>
+              <div>
+                {% if q.type == "text" %}
+                  <textarea id="{{ qid }}" name={{ qid }}>{{ q.value }}</textarea>
+                {% elif q.type == "string" %}
+                  <input id="{{ qid }}" type="text" name="q{{ qloop.index0 }}" value="{{ q.value }}">
+                {% elif q.type in ("radio", "checkbox") %}
+                  <ul class="options">
+                    {% for opt in q.options %}
+                      <li>
+                        {% set checked = "checked" if opt == q.value or opt in q.get('values', []) else "" %}
+                        <label>
+                          <input name="{{ qid }}" type="{{ q.type }}" value="{{ opt }}" {{ checked }}>
+                          <span>{{ opt }}</span>
+                        </label>
+                        {% if opt == q.other_option %}
+                          <input type="text" name="{{ qid }}.{{ opt }}.other" value={{ q.other_value }}>
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        <hr>
+            <div style="float:right;">
+                <input type="submit" class="main_btn" name="submit" value="{{ questionnaire.submit }}">
+            </div>
+
+        </form>
     </div>
-  {% endfor %}
-  <input type="submit" name="submit" value="{{ questionnaire.submit }}">
-</form>
+</div>
+    </div>
+
+
+{% endblock %}
+

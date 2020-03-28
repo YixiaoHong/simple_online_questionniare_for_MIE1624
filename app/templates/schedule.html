@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/style.css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/style_.css">
+  <title>Schedule Template | CodyHouse</title>
+    <style>
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .center {
+          text-align: center;
+          margin: auto;
+          width: 70%;
+          border: 3px solid #73AD21;
+          padding: 10px;
+        }
+
+    .button2 {background-color: #008CBA;} /* Blue */
+    .button3 {background-color: #f44336;} /* Red */
+    .button4 {background-color: #e7e7e7; color: black;} /* Gray */
+    .button5 {background-color: #555555;} /* Black */
+</style>
+</head>
+<body>
+  <header class="cd-main-header text-center flex flex-column flex-center">
+    <h1 class="text-xl">{{pageTitle}}</h1>
+
+  </header>
+
+  <div class="center">
+
+        <h2 style="color: #2a6df4">{{ info_msg }}</h2>
+
+      {% for solu_index in detailed_solution_dict %}
+            <button class="main_btn solution" value="{{ solu_index }}">{{ solu_index }}</button>
+      {% endfor %}
+        <a href="{{ url_for("main_page") }}"><button class="main_btn" value="Start over!">Start over!</button></a>
+  </div>
+
+  {% for solu_index in detailed_solution_dict %}
+      <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule timetable" id={{ solu_index }}>
+        <div class="cd-schedule__timeline">
+          <ul>
+            <li><span>09:00</span></li>
+            <li><span>09:30</span></li>
+            <li><span>10:00</span></li>
+              <li><span>10:30</span></li>
+            <li><span>11:00</span></li>
+              <li><span>11:30</span></li>
+            <li><span>12:00</span></li>
+              <li><span>12:30</span></li>
+            <li><span>13:00</span></li>
+              <li><span>13:30</span></li>
+            <li><span>14:00</span></li>
+              <li><span>14:30</span></li>
+            <li><span>15:00</span></li>
+              <li><span>15:30</span></li>
+            <li><span>16:00</span></li>
+              <li><span>16:30</span></li>
+            <li><span>17:00</span></li>
+              <li><span>17:30</span></li>
+            <li><span>18:00</span></li>
+              <li><span>18:30</span></li>
+            <li><span>19:00</span></li>
+              <li><span>19:30</span></li>
+            <li><span>20:00</span></li>
+              <li><span>20:30</span></li>
+            <li><span>21:00</span></li>
+
+
+          </ul>
+        </div> <!-- .cd-schedule__timeline -->
+
+        <div class="cd-schedule__events">
+          <ul>
+            <li class="cd-schedule__group">
+              <div class="cd-schedule__top-info"><span>Monday</span></div>
+
+              <ul>
+                  {% for item in detailed_solution_dict[solu_index]['mondayEvents'] %}
+                      <li class="cd-schedule__event">
+                        <a data-start="{{ item.starttime }}" data-end="{{ item.endtime }}"  data-event="{{ item.colortype }}" href="#0">
+                        <em class="cd-schedule__name">{{item.title}}</em>
+                        </a>
+                    </li>
+                  {% endfor %}
+
+
+              </ul>
+            </li>
+
+            <li class="cd-schedule__group">
+              <div class="cd-schedule__top-info"><span>Tuesday</span></div>
+
+              <ul>
+                  {% for item in detailed_solution_dict[solu_index]['tuesdayEvents'] %}
+                      <li class="cd-schedule__event">
+                        <a data-start="{{ item.starttime }}" data-end="{{ item.endtime }}"  data-event="{{ item.colortype }}" href="#0">
+                        <em class="cd-schedule__name">{{item.title}}</em>
+                        </a>
+                    </li>
+                  {% endfor %}
+
+
+              </ul>
+            </li>
+
+            <li class="cd-schedule__group">
+              <div class="cd-schedule__top-info"><span>Wednesday</span></div>
+
+              <ul>
+
+                  {% for item in detailed_solution_dict[solu_index]['wednesdayEvents'] %}
+                      <li class="cd-schedule__event">
+                        <a data-start="{{ item.starttime }}" data-end="{{ item.endtime }}"  data-event="{{ item.colortype }}" href="#0">
+                        <em class="cd-schedule__name">{{item.title}}</em>
+                        </a>
+                    </li>
+                  {% endfor %}
+
+
+              </ul>
+            </li>
+
+            <li class="cd-schedule__group">
+              <div class="cd-schedule__top-info"><span>Thursday</span></div>
+
+              <ul>
+                  {% for item in detailed_solution_dict[solu_index]['thursdayEvents'] %}
+                      <li class="cd-schedule__event">
+                        <a data-start="{{ item.starttime }}" data-end="{{ item.endtime }}"  data-event="{{ item.colortype }}" href="#0">
+                        <em class="cd-schedule__name">{{item.title}}</em>
+                        </a>
+                    </li>
+                  {% endfor %}
+              </ul>
+            </li>
+
+            <li class="cd-schedule__group">
+              <div class="cd-schedule__top-info"><span>Friday</span></div>
+
+              <ul>
+                  {% for item in detailed_solution_dict[solu_index]['fridayEvents'] %}
+                      <li class="cd-schedule__event" id = "{{ solu_index }}">
+                        <a data-start="{{ item.starttime }}" data-end="{{ item.endtime }}"  data-event="{{ item.colortype }}" href="#0">
+                        <em class="cd-schedule__name">{{item.title}}</em>
+                        </a>
+                    </li>
+                  {% endfor %}
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cd-schedule-modal">
+          <header class="cd-schedule-modal__header">
+            <div class="cd-schedule-modal__content">
+              <span class="cd-schedule-modal__date"></span>
+              <h3 class="cd-schedule-modal__name"></h3>
+            </div>
+
+            <div class="cd-schedule-modal__header-bg"></div>
+          </header>
+
+          <div class="cd-schedule-modal__body">
+            <div class="cd-schedule-modal__event-info"></div>
+            <div class="cd-schedule-modal__body-bg"></div>
+          </div>
+
+          <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
+        </div>
+
+        <div class="cd-schedule__cover-layer"></div>
+      </div> <!-- .cd-schedule -->
+  {% endfor %}
+  <script src="https://mie1624-front.s3.amazonaws.com/static/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+  <script src="https://mie1624-front.s3.amazonaws.com/static/js/main.js"></script>
+
+<script>
+    let solutions;
+function init() {
+    solutions = document.getElementsByClassName("solution");
+    let all_timetable = document.getElementsByClassName("timetable");
+    for (let i = 0; i< all_timetable.length; i++){
+                let timetable = all_timetable[i];
+                timetable.style.display="none";}
+    if (all_timetable.length >= 1){
+        all_timetable[0].style.display="block";
+    }
+
+    for (let i = 0; i< solutions.length; i++){
+        let sol = solutions[i];
+        sol.addEventListener("click", function () {
+            let solution = this.getAttribute("value");
+            let all_timetable = document.getElementsByClassName("timetable");
+            for (let i=0; i< all_timetable.length; i++){
+                let timetable = all_timetable[i];
+                timetable.style.display="none";
+            }
+            var x = document.getElementById(solution);
+            x.style.display = "block";
+        })
+    }
+}
+window.addEventListener("load", init, false)
+</script>
+</body>
+</html>

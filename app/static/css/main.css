@@ -1,0 +1,23 @@
+/*.normal_text{*/
+/*align:"center"*/
+/*}*/
+
+/*.normal_normal_text{*/
+/*    alignment: left;*/
+/*    font-size: x-large*/
+/*}*/
+
+/*.btn{*/
+/*    font-style: italic;*/
+/*    font-size: x-large;*/
+/*}*/
+
+.select_course_section{
+    vertical-align: top;
+    margin-top: 30px;
+    /*text-align: center*/
+}
+
+.with_board {
+  border:1px solid black;
+}

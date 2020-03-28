@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="https://mie1624-front.s3.amazonaws.com/static/img/favicon.png" type="image/png">
+	<title>Smart Course Picker</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/bootstrap.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/linericon/style.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/animate-css/animate.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/jquery-ui/jquery-ui.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/popup/magnific-popup.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/swiper/css/swiper.min.css">
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/vendors/scroll/jquery.mCustomScrollbar.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/style_.css">
+    <link rel="stylesheet" href="https://mie1624-front.s3.amazonaws.com/static/css/css.css">
+</head>
+
+<body>
+
+	<!--================ Start banner section =================-->
+	<section class="home-banner-area relative" style="height: 100%; width: 100%">
+		<div class="container-fluid">
+			<div class="row d-flex align-items-center justify-content-center inner_container">
+				<div class="header-right col-lg-6 col-md-6">
+					<h1>
+						Course Recommendation System
+					</h1>
+                    <h2>University of Toronto Master of Data Science and Artificial Intelligence Program</h2>
+					<p class="pt-20">
+						Take a short survey and explore what courses fit you best!
+					</p>
+					<a href="{{ url_for("show_questionnaire") }}" class="main_btn">
+						Get Started
+						<img src="https://mie1624-front.s3.amazonaws.com/static/img/next.png" alt="">
+					</a>
+				</div>
+
+				<div class="col-lg-6 col-md-6 header-left" style="padding-top: 5px; padding-right: 5px">
+					<div class="">
+						<img class="img-fluid w-100" src="https://curiocity.com/toronto/wp-content/uploads/2019/09/shutterstock_450746794.jpg" alt="">
+{#                        https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/university_of_toronto_0.jpg?itok=wiwqObhn#}
+					</div>
+					<div class="video-popup d-flex align-items-center">
+						<a class="play-video video-play-button animate" href="{{ url_for("display_img_helper") }}" data-animate="zoomIn"
+						 data-duration="1.5s" data-delay="0.1s">
+							<span></span>
+						</a>
+						<div class="watch">
+							<h3 style="color: ghostwhite">Explore More</h3>
+							<h5></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+                    <div class="row d-flex align-items-center justify-content-center inner_container">
+            <img id="img" src="{{ img_id }}" style="width: auto; height: auto">
+        </div>
+		</div>
+
+	</section>
+	<!--================ End banner section =================-->
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://mie1624-front.s3.amazonaws.com/static/js/jquery-3.2.1.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/js/popper.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/js/bootstrap.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/js/stellar.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/isotope/isotope-min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/jquery-ui/jquery-ui.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/js/jquery.ajaxchimp.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/js/mail-script.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/popup/jquery.magnific-popup.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/swiper/js/swiper.min.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/vendors/scroll/jquery.mCustomScrollbar.js"></script>
+	<script src="https://mie1624-front.s3.amazonaws.com/static/js/theme.js"></script>
+</body>
+
+</html>
