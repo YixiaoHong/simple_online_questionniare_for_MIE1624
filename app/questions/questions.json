@@ -53,6 +53,23 @@
                 "Leadership skills":["Leadership"],
                 "Interpersonal skills":["Consulting"]
             }
+        },
+        {
+            "type": "radio",
+            "label": "Which of the following do you think is the most important for success??",
+            "required": true,
+            "options": [
+                "Effective Communication",
+                "Good Decision Making",
+                "Leadership skills",
+                "Interpersonal skills"
+            ],
+            "tags": {
+                "Effective Communication":["Effective Communication"],
+                "Good Decision Making":["Decision Making"],
+                "Leadership skills":["Leadership"],
+                "Interpersonal skills":["Consulting"]
+            }
         }
 
     ]
