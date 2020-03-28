@@ -99,7 +99,7 @@
             "course_title": "A.I. in Finance",
             "course_type": "TE",
             "course_score": 0,
-            "tags": ["SVM", "AI", "Finance"]
+            "tags": ["AI", "Finance"]
         },
         {
             "course_code": "PE1000",
