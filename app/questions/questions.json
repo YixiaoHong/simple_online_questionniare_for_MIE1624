@@ -54,7 +54,7 @@
             "required": true,
             "options": [
                 "Local",
-                "Cloud",
+                "Cloud"
             ],
             "tags": {
                 "Local": ["Database-EC", "Data Warehouse-EC"],
