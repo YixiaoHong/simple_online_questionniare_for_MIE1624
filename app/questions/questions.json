@@ -10,18 +10,70 @@
     },
     "questions": [
         {
-            "type": "checkbox",
-            "label": "What's your skill level in Parallel Programing (either R or Scala)?",
+            "type": "radio",
+            "label": "Do you have any experience on R?",
             "required": true,
             "options": [
                 "Never used before",
-                "Used in one or two projects",
-                "Advanced level"
+                "I have some knowledge about it",
             ],
             "tags": {
-                "Never used before": [],
-                "Used in one or two projects":  ["R"],
-                "Advanced level": ["R", "Scala", "Parallel Programming"]
+                "Never used before": ["R-EC"],
+                "I have some knowledge about it":  []
+            }
+        },
+        {
+            "type": "radio",
+            "label": "Do you have any experience on Scala?",
+            "required": true,
+            "options": [
+                "Never used before",
+                "I have some knowledge about it",
+            ],
+            "tags": {
+                "Never used before": ["Scala-EC"],
+                "I have some knowledge about it":  []
+            }
+        },
+        {
+            "type": "radio",
+            "label": "Do you have any experience on SQL?",
+            "required": true,
+            "options": [
+                "Never used before",
+                "I have some knowledge about it",
+            ],
+            "tags": {
+                "Never used before": ["SQL-EC"],
+                "I have some knowledge about it":  []
+            }
+        },
+        {
+            "type": "radio",
+            "label": "Do you prefer a local computation environment or on the cloud?",
+            "required": true,
+            "options": [
+                "Local",
+                "Cloud",
+            ],
+            "tags": {
+                "Local": ["Database-EC", "Data Warehouse-EC"],
+                "Cloud":  ["Cloud Computing-EC", "Spark-EC", "Hadoop-EC"]
+            }
+        },
+        {
+            "type": "radio",
+            "label": "What’s the data size you may use in work?",
+            "required": true,
+            "options": [
+                "Up to Gb size",
+                "Over Gb size",
+                "I don’t know"
+            ],
+            "tags": {
+                "Up to Gb size": ["Database-EC", "Data Warehouse-EC"],
+                "Over Gb size":  ["Big Data-EC", "Parallel Programming-EC"],
+                "I don’t know": []
             }
         },
         {
