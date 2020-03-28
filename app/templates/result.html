@@ -61,6 +61,7 @@
                 <tr style="color: black; ">
                 <td>Course Code</td>
                 <td>Course Title</td>
+                <td>Recommendation Level</td>
 
         </tr>
             </th>
@@ -74,6 +75,8 @@
         <tr>
             <td>{{MC[i]["course_code"]}}</td>
             <td>{{MC[i]["course_title"]}}</td>
+            <td>{{MC[i]["course_stars"]}}</td>
+
 
         {%endfor%}
 
@@ -89,7 +92,8 @@
                 <tr style="color: black; ">
                 <td>Course Code</td>
                 <td>Course Title</td>
-                <td>Recommendation Score</td>
+                <td>Recommendation Level</td>
+                    <td>Score (for Debug)</td>
                 <td>Tages (for Debug)</td>
         </tr>
             </th>
@@ -101,6 +105,7 @@
         <tr>
             <td>{{EC[i]["course_code"]}}</td>
             <td>{{EC[i]["course_title"]}}</td>
+            <td>{{EC[i]["course_stars"]}}</td>
             <td>{{EC[i]["course_score"]}}</td>
             <td>{{EC[i]["tags"]}}</td>
 
@@ -118,7 +123,8 @@
                 <tr style="color: black; ">
                 <td>Course Code</td>
                 <td>Course Title</td>
-                <td>Recommendation Score</td>
+                <td>Recommendation Level</td>
+                    <td>Score (for Debug)</td>
                     <td>Tages (for Debug)</td>
         </tr>
             </th>
@@ -130,6 +136,7 @@
         <tr>
             <td>{{EB[i]["course_code"]}}</td>
             <td>{{EB[i]["course_title"]}}</td>
+            <td>{{EB[i]["course_stars"]}}</td>
             <td>{{EB[i]["course_score"]}}</td>
             <td>{{EB[i]["tags"]}}</td>
 
@@ -147,7 +154,8 @@
                 <tr style="color: black; ">
                 <td>Course Code</td>
                 <td>Course Title</td>
-                <td>Recommendation Score</td>
+                <td>Recommendation Level</td>
+                    <td>Score (for Debug)</td>
                     <td>Tages (for Debug)</td>
         </tr>
             </th>
@@ -159,6 +167,7 @@
         <tr>
             <td>{{ET[i]["course_code"]}}</td>
             <td>{{ET[i]["course_title"]}}</td>
+            <td>{{ET[i]["course_stars"]}}</td>
             <td>{{ET[i]["course_score"]}}</td>
             <td>{{ET[i]["tags"]}}</td>
 
@@ -167,7 +176,37 @@
         </tr>
 
         </table>
+    <hr>
+        <h2>Section5: Top 3 Recommended Practical Experience Courses</h2>
+    <hr>
+        <table style="margin-left: 20px;">
+        <!-- Table headers -->
+            <th>
+                <tr style="color: black; ">
+                <td>Course Code</td>
+                <td>Course Title</td>
+                <td>Recommendation Level</td>
+                    <td>Score (for Debug)</td>
+                    <td>Tages (for Debug)</td>
+        </tr>
+            </th>
 
+        <!-- For loop logic of jinja template -->
+        {%for i in range(3)%}
+
+        <!-- table rows -->
+        <tr>
+            <td>{{PE[i]["course_code"]}}</td>
+            <td>{{PE[i]["course_title"]}}</td>
+            <td>{{PE[i]["course_stars"]}}</td>
+            <td>{{PE[i]["course_score"]}}</td>
+            <td>{{PE[i]["tags"]}}</td>
+
+        {%endfor%}
+
+        </tr>
+
+        </table>
     </div>
 </div>
         </body>

@@ -100,22 +100,30 @@ def show_questionnaire():
 
             #get all the tags that the user selected, now search for which courses has the tags
             for course in course_list_dict:
-                if course["course_type"] == "EB" or course["course_type"] == "ET":
+                if course["course_type"] != "MC":
                     num_tags = len(course["tags"])
                     selected_num_tags = 0
                     for each_tag in course["tags"]:
                         if each_tag in answer_tags:
                             selected_num_tags +=1
                     course["course_score"] = round(selected_num_tags*1.0/num_tags,2)
-                elif course["course_type"] == "EC":
-                    num_tags = len(course["tags"])
-                    selected_num_tags = 0
-                    for each_tag in course["tags"]:
-                        if each_tag in answer_tags:
-                            selected_num_tags +=1
-                    course["course_score"] = round(1-selected_num_tags*1.0/num_tags,2)
+                    if course["course_score"] >= 0.6:
+                        course["course_stars"] = "★★★★★"
+                    elif (course["course_score"] < 0.6) and (course["course_score"] > 0.3):
+                        course["course_stars"] = "★★★★"
+                    else:
+                        course["course_stars"] = "★★★"
+
+                        # elif course["course_type"] == "EC":
+                #     num_tags = len(course["tags"])
+                #     selected_num_tags = 0
+                #     for each_tag in course["tags"]:
+                #         if each_tag in answer_tags:
+                #             selected_num_tags +=1
+                #     course["course_score"] = round(1-selected_num_tags*1.0/num_tags,2)
                 else:
-                    pass
+                    course["course_score"] = 1.0
+                    course["course_stars"] = "★★★★★"
 
             print("Calculated Course Score:")
             for course in course_list_dict:
@@ -124,16 +132,19 @@ def show_questionnaire():
             EC = []
             EB = []
             ET = []
+            PE = []
             #sort the course to different list
             for course in course_list_dict:
                 if course["course_type"] == "MC":
                     MC.append(course)
                 elif course["course_type"] == "EC":
                     EC.append(course)
-                elif course["course_type"] == "EB":
+                elif course["course_type"] == "BE":
                     EB.append(course)
-                elif course["course_type"] == "ET":
+                elif course["course_type"] == "TE":
                     ET.append(course)
+                elif course["course_type"] == "PE":
+                    PE.append(course)
                 else:
                     print("Not in list")
 
@@ -141,11 +152,12 @@ def show_questionnaire():
             EC = sorted(EC, reverse=True, key=lambda course_obj: course_obj["course_score"])
             EB = sorted(EB, reverse=True, key=lambda course_obj: course_obj["course_score"])
             ET = sorted(ET, reverse=True, key=lambda course_obj: course_obj["course_score"])
+            PE = sorted(PE, reverse=True, key=lambda course_obj: course_obj["course_score"])
 
             Selected_Tags = str(answer_tags)
 
             #"Submitted Answers=\n" + str(form) + "\nUser Selected Tags\n" + str(answer_tags) + "\nCalculated Course Scores:\n" +str(ranked_course)
-            return render_template("result.html", Selected_Tags = Selected_Tags ,MC = MC, EC = EC, EB = EB, ET = ET)
+            return render_template("result.html", Selected_Tags = Selected_Tags ,MC = MC, EC = EC, EB = EB, ET = ET, PE = PE)
 
 
 
