@@ -76,7 +76,7 @@
         ,{
             "course_code": "TE1000",
             "course_title": "Cloud Computing Techniques",
-            "course_type": "ET",
+            "course_type": "TE",
             "course_score": 0,
             "tags": [ "AWS", "Cloud Computing"]
         },
